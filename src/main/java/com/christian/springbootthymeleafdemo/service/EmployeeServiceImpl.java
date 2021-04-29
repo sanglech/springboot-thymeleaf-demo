@@ -23,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     //No need for transactional for JPASpring data as it does transactional already
     @Override
     public List<Employee> findAll() {
-        return employeeRepository.findAll();
+        return employeeRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override
