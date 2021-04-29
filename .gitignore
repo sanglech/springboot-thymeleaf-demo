@@ -30,3 +30,8 @@ src/test/*
 *.iml
 target/*
 /target/
+src/main/java/.DS_Store
+.DS_Store
+src/main/.DS_Store
+.DS_Store
+src/main/.DS_Store
