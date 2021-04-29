@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Thymeleaf Demo</title>
+    <!-- reference CSS File-->
+    <link rel ="stylesheet"
+          th:href="@{/css/demo.css}"/>
 </head>
 <body>
     <p>Hello</p>
-    <p th:text ="'Hello World of Thyme Leaf' + ${theDate}"/>
+    <p th:text ="'Hello World of Thyme Leaf ' + ${theDate}" class="funny"/>
     <br><br>
 </body>
 </html>
