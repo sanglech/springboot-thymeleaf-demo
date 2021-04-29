@@ -15,7 +15,10 @@
         <h3>Employee Directory</h3>
         <form action = "#" th:action="@{/employees/save}"
                            th:object="${employee}" method="POST">
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}" />
 
+            <!-- Calls getter first so can prepopulate -->
             <input type="text" th:field="*{firstName}"
             class="form-control mb-4 col-4" placeholder="First Name">
 
