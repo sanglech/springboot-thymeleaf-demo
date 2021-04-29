@@ -32,6 +32,6 @@ public class EmployeeController {
 
         theModel.addAttribute("theEmployees",employees);
 
-        return "list-employees";
+        return "employees/list-employees";
     }
 }
