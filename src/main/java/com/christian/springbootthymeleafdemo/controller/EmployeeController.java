@@ -57,14 +57,26 @@ public class EmployeeController {
         return "employees/employee-form";
     }
 
-
-
-
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee theEmployee){
         //save the employee
         employeeService.saveEmployee(theEmployee);
         //use redirect to rpevent multple saves
+        return "redirect:/employees/list";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("employeeId") int theId){
+        //get employee from the service
+        Employee theEmployee = employeeService.getEmployeeById(theId);
+
+        //prepopulate model
+        if(theEmployee==null){
+            throw new RuntimeException("Employee with the id: "+ theId+ " does not exist");
+        }
+        employeeService.deleteEmployeeById(theId);
+
+        //redirect back to list
         return "redirect:/employees/list";
     }
 }
