@@ -33,5 +33,3 @@ target/*
 *.DS_Store
 #properties file
 *.properties
-src/main/resources/application.properties
-target/classes/application.properties
