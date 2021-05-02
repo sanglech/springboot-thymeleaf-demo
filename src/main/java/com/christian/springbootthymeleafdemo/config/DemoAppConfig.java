@@ -13,12 +13,8 @@ public class DemoAppConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").anonymous()
-                .antMatchers("/employees/list").anonymous()
-                .antMatchers("/employees/showFormForAdd").anonymous()
-                .antMatchers("/employees/showFormForUpdate").anonymous()
-                .antMatchers("/employees/save").anonymous()
-                .antMatchers("/employees/delete").anonymous()
-                .antMatchers("/employees/search").anonymous()
+                .antMatchers("/employees/**").anonymous()
+                .antMatchers("/actuator/**").anonymous()
                 .anyRequest().authenticated();
     }
 }
