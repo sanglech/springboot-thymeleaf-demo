@@ -100,24 +100,24 @@ public class EmployeeController {
             employees= employeeService.findAll();
         }
         else if(theEmployee.getFirstName()==null&&theEmployee.getLastName()!=null){
-            System.out.println("SEARCHING BY LAST NAME: "+ theEmployee.getLastName() );
+           // System.out.println("SEARCHING BY LAST NAME: "+ theEmployee.getLastName() );
             employees= employeeService.findByLastNameLike(theEmployee.getLastName());
         }
         else if(theEmployee.getFirstName()!=null&&theEmployee.getLastName()==null){
             employees=employeeService.findByFirstNameContaining(theEmployee.getFirstName());
         }
         else{
-            System.out.println("LOOKING FOR FIRST NAME: "+
-                    theEmployee.getFirstName() +" "+theEmployee.getLastName());
+           // System.out.println("LOOKING FOR FIRST NAME: "+
+           //         theEmployee.getFirstName() +" "+theEmployee.getLastName());
             employees=employeeService.findByFirstNameAndLastName(theEmployee.getFirstName(),
                     theEmployee.getLastName());
         }
 
         theModel.addAttribute("theEmployees",employees);
-        System.out.println(">>>>>>>>"+ employees);
+       /// System.out.println(">>>>>>>>"+ employees);
         //System.out.println(">>>>In search: "+ theEmployee.getFirstName() + theEmployee.getLastName());
 
         //theModel.addAttribute("employee",new Employee());
-        return "/employees/search-employee";
+        return "employees/search-employee";
     }
 }
