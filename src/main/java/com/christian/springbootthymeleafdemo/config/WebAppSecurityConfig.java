@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-public class DemoAppConfig extends WebSecurityConfigurerAdapter {
+public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -16,5 +16,15 @@ public class DemoAppConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/employees/**").anonymous()
                 .antMatchers("/actuator/**").anonymous()
                 .anyRequest().authenticated();
+                /*
+        http.authorizeRequests()
+                .antMatchers("/").anonymous()
+                .antMatchers("/employees/list").anonymous()
+                .antMatchers("/employees/showFormForAdd").anonymous()
+                .antMatchers("/employees/showFormForUpdate").anonymous()
+                .antMatchers("/employees/save").anonymous()
+                .antMatchers("/employees/delete").anonymous()
+                .anyRequest().authenticated();*/
+
     }
 }
