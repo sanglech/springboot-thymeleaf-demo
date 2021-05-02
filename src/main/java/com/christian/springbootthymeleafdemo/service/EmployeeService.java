@@ -9,4 +9,8 @@ public interface EmployeeService {
     public Employee getEmployeeById( int id);
     public void saveEmployee(Employee theEmployee);
     public void deleteEmployeeById(int theId);
+    public List<Employee> findByFirstNameContaining(String name);
+    public List<Employee> findByLastNameLike(String name);
+    public List<Employee> findByFirstNameAndLastName(String firstName,String lastName);
+
 }

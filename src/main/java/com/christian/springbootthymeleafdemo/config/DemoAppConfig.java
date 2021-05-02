@@ -18,6 +18,7 @@ public class DemoAppConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/employees/showFormForUpdate").anonymous()
                 .antMatchers("/employees/save").anonymous()
                 .antMatchers("/employees/delete").anonymous()
+                .antMatchers("/employees/search").anonymous()
                 .anyRequest().authenticated();
     }
 }

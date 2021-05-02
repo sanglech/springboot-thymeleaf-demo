@@ -50,6 +50,23 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.deleteById(theId);
     }
 
+    @Override
+    public List<Employee> findByFirstNameContaining(String name) {
+        List<Employee> result = employeeRepository.findByFirstNameContaining(name);
+        return result;
+    }
+
+    @Override
+    public List<Employee> findByLastNameLike(String name) {
+        List<Employee> result = employeeRepository.findByLastNameLike(name);
+        return result;
+    }
+
+    @Override
+    public List<Employee> findByFirstNameAndLastName(String firstName, String lastName) {
+        List<Employee> result = employeeRepository.findByFirstNameAndLastName(firstName,lastName);
+        return result;
+    }
 
     //beanid is class name starting with lowercase
     //tells spring which bean to use

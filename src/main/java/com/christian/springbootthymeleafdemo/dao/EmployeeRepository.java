@@ -12,4 +12,7 @@ public interface EmployeeRepository extends JpaRepository <Employee, Integer> {
     //add a method to sort by last name (needs to follow format)
     //check spring data jpa
     public List<Employee> findAllByOrderByLastNameAsc();
+    public List<Employee> findByFirstNameContaining(String name);
+    public List<Employee> findByLastNameLike(String name);
+    public List<Employee> findByFirstNameAndLastName(String firstName,String lastName);
 }
