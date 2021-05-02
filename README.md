@@ -9,4 +9,11 @@ Tech used
 - Java 16
 - MySQL
 - ThymeLeaf
-- Spring-boot-data archetechture
+- Spring-boot-data archtechture
+
+TODO:
+-Add Search function
+-Add Security so only ADMINS can perform CRUD operations.
+-Add sort feature to sort by First Name (ASC and DESC)
+-Add sort feature to sort by Last Name (ASC and DESC)
+-Add sort feature to sort by email (ASC and DESC)
