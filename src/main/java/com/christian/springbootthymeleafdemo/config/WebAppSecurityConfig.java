@@ -30,6 +30,7 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/home").permitAll()
                 .antMatchers("/employees/list").hasAnyRole("MANAGER","ADMIN","EMPLOYEE")
                 .antMatchers("/employees/showFormForAdd").hasAnyRole("ADMIN","MANAGER")
                 .antMatchers("/actuator/**").permitAll()
@@ -43,7 +44,6 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().permitAll()
                 .and()
                 .exceptionHandling().accessDeniedPage("/access-denied");
-
 
                 /*
         http.authorizeRequests()
