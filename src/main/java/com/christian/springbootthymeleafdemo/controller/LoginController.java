@@ -2,24 +2,17 @@ package com.christian.springbootthymeleafdemo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class LoginController {
-    @GetMapping("/")
-    public String showHomePage(){
-        return"home";
+    @GetMapping("/showMyLoginPage")
+    public String showMyLoginPage(){
+        return "fancy-login";
     }
 
-    @GetMapping("/showLoginPage")
-    public String showLoginForm(){
-        return"starter/login-form";
+    //request for /accessdenied
+    @GetMapping("/access-denied")
+    public String showAccessDenied(){
+        return "access-denied";
     }
-
-    @GetMapping("/showSignUpPage")
-    public String showSignUpPage(){
-        return"starter/signup-form";
-    }
-
-
 }
