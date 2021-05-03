@@ -21,22 +21,27 @@ public class Employee {
     @Column(name="email")
     private String email;
 
+    @Column(name="username")
+    private String username;
+
     //define constructors
     public Employee(){
 
     }
 
-    public Employee(String firstName, String lastName, String email) {
+    public Employee(String firstName, String lastName, String email,String username) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.username=username;
     }
 
-    public Employee(int id, String firstName, String lastName, String email) {
+    public Employee(int id, String firstName, String lastName, String email,String username) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.username=username;
     }
 
     //define getter and setters
@@ -73,6 +78,13 @@ public class Employee {
         this.email = email;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     //define tostring
 
@@ -84,6 +96,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 '}';
     }
 }

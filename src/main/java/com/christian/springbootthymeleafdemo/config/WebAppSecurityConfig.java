@@ -12,9 +12,11 @@ public class WebAppSecurityConfig extends WebSecurityConfigurerAdapter {
 
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").anonymous()
+                .antMatchers("/").permitAll()
                 .antMatchers("/employees/**").anonymous()
                 .antMatchers("/actuator/**").anonymous()
+                .antMatchers("/showLoginPage").permitAll()
+                .antMatchers("/showSignUpPage").permitAll()
                 .anyRequest().authenticated();
                 /*
         http.authorizeRequests()
